@@ -1,0 +1,1 @@
+ /* "dev:start": "npx wait-port rabbit:5672 && node --inspect=0.0.0.0 index.js" */
