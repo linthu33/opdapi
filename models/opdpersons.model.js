@@ -14,7 +14,11 @@ const PersonSchema = new mongoose.Schema({
   RegisteredDate: { type: Date, default: Date.now },
   ShortBiography: String,
   QRCode: String,
-  address:  [AddressDatamodel]
+  address:  [AddressDatamodel],
+  patientId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "PatientModel",
+  },
 });
 PersonSchema.virtual("FullName").get(function () {
   return `${this.FirstName + this.LastName}`;

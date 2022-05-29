@@ -63,16 +63,13 @@ exports.opd_patient_create = async (req, res, next) => {
 
       //console.log("Req data for patient", newpatient);
       await newpatient.save();
+      await updatepatientId(newPerson._id,newpatient._id);
       await createStaffRoles(newpatient._id, req.body.StaffRoles);
       await createDrugs(newpatient._id, req.body.Drugs);
       await createDiagnosis(newpatient._id, req.body.Diagnosis);
       await createTreatments(newpatient._id, req.body.Treatments);
       await createCharges(newpatient._id, req.body.Charges);
-      res.json({
-        success: true,
-        message: "new Patient acc is sucessfully",
-        newpatient: newpatient,
-      });
+      res.json(newpatient);
     } else {
       res.json({
         success: true,
@@ -144,6 +141,13 @@ function arraypush(arr) {
   //console.log("console ", list);
   return arrdata;
 }
+const updatepatientId = async function (personId,patientId) {
+ return await PersonModel.findByIdAndUpdate(
+   personId,
+   { $set: { patientId: patientId } },
+   { new: true }
+ )
+};
 const createStaffRoles = async function (patientId, staff) {
   return await StaffRoleModel.create(staff).then((docstaff) => {
     return patientsModel.findByIdAndUpdate(
