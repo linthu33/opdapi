@@ -25,7 +25,7 @@ exports.opd_patient_create = async (req, res, next) => {
       QRCode: req.body.QRCode,
     });
 
-    // newPerson.address=arraypush(req.body.Address)
+    //newPerson.address=arraypush(req.body.Address)
     console.log("address after puh", newPerson.address);
     await newPerson.save();
     //console.log("Req data for person", newPerson);
@@ -34,7 +34,7 @@ exports.opd_patient_create = async (req, res, next) => {
         Age: req.body.Age,
         RegisterDate: req.body.RegisterDate,
         PatientType: req.body.PatientType,
-        Service: "company",
+        //Service: "company",
         OPTCase: req.body.OPTCase,
         Tempature: req.body.Tempature,
         Weight: req.body.Weight,
@@ -42,12 +42,12 @@ exports.opd_patient_create = async (req, res, next) => {
         UpperBloodPressure: req.body.UpperBloodPressure,
         LowerBloodPressure: req.body.LowerBloodPressure,
         PulseRate: req.body.PulseRate,
-        StaffPermit: "staffkyaw",
+        //StaffPermit: "staffkyaw",
         loginuser: "kyaw",
         hospital: req.body.Hospital,
         Department: req.body.Department,
         //ReferInfor: "1234",
-        PatientStatus: req.body.PatientStatus,
+        PatientStatus: req.body.patientStatus,
         Complaint: "good health",
         Surgical: "dasd",
         Examination: "asd",
