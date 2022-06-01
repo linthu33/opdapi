@@ -1,10 +1,13 @@
 const opd_person_controller = require("../contollers/opdpersons.con");
 const opd_patient_controller = require("../contollers/opdpatient.con");
+const fileupload=require('../contollers/fileupload.con');
 const dep_con = require("../contollers/department.con");
 (verifyToken = require("../middleware/authJWT")),
   ({ signup, signin } = require("../contollers/auth.controller"));
 
 module.exports = (app) => {
+  //upload image for product
+  app.post("/uploadImage",fileupload.uploadImage);
   //#region For User route
   app.post("/register", signup, function (req, res) {});
 

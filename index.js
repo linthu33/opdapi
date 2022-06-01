@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
-//app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 
 // Have Node serve the files for our built React app
 app.get("/", (req, res) => {
