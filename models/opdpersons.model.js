@@ -15,7 +15,7 @@ const PersonSchema = new mongoose.Schema({
   ShortBiography: String,
   QRCode: String,
   address:  [AddressDatamodel],
-  patientId: {
+  patient: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "PatientModel",
   },

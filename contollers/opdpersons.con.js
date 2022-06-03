@@ -4,7 +4,7 @@ exports.opdperson_findOne = (req, res, next) => {
     personModel
     .findOne({FirstName:"ludo"})
     .populate({
-      path: "patientId",
+      path: "patient",
       populate: [
         {
           path: "Drugs",
@@ -38,7 +38,7 @@ exports.opdperson_findAll = (req, res, next) => {
   personModel
     .find()
     .populate({
-      path: "patientId",
+      path: "patient",
       populate: [
         {
           path: "Drugs",

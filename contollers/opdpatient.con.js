@@ -145,7 +145,7 @@ function arraypush(arr) {
 const updatepatientId = async function (personId,patientId) {
  return await PersonModel.findByIdAndUpdate(
    personId,
-   { $set: { patientId: patientId } },
+   { $set: { patient: patientId } },
    { new: true }
  )
 };
