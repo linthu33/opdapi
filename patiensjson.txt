@@ -12,81 +12,93 @@
     "RegisteredDate": "3/17/2021",
     "ShortBiography": "",
     "QRCode": "",
-    "Address": {
-        "PhoneNO": "655",
-        "MobileNo": "",
-        "ContactNo": "",
-        "HomeNo": "",
-        "StreetName": "",
-        "City": "",
-        "State": "",
-        "Postcode": "",
-        "Country": ""
-    },
-    "Age": "28",
-    "RegisterDate": "2/2/2022",
-    "PatientType": "inservice",
-    "Service": "Service",
-    "OPTCase": "dental",
-    "Tempature": "201",
-    "Weight": "103",
-    "Height": "53",
-    "UpperBloodPressure": "100",
-    "LowerBloodPressure": "90",
-    "PulseRate": "",
-    "StaffPermit": "admin",
-    "loginuser": "ko",
-    "hospital": "အောင်ချမ်းသာ",
-    "Department": "dental",
-    "ReferInfor": "id",
-    "PatientStatus": "opd",
-    "Complaint": "good health",
-    "Surgical": "data",
-    "Examination": "test data",
-    "Investigation": "dd",
-    "DrugFee": 60000,
-    "DiagnosisFee": 4000,
-    "ChargeFee": 40,
-    "Tax": 500,
-    "GrandTotal": 500,
-    "StaffRoles": [
+    "Address": [
         {
-            "RoleName": "nurse"
+            "PhoneNO": "655",
+            "ContactNo": "",
+            "HomeNo": "",
+            "StreetName": "",
+            "City": "",
+            "State": "",
+            "Postcode": "",
+            "Country": ""
         },
         {
-            "RoleName": "red nurse"
+            "PhoneNO": "655",
+            "ContactNo": "",
+            "HomeNo": "",
+            "StreetName": "",
+            "City": "",
+            "State": "",
+            "Postcode": "",
+            "Country": ""
         }
     ],
-    "Drugs": [
-        {
-            "Date": "",
-            "DrugName": "String",
-            "Quantity": "",
-            "Strength": "",
-            "Group": "",
-            "Forms": "",
-            "UnitPrice": 55,
-            "TotalPrice": 44
-        }
-    ],
-    "Diagnosis": [
-        {
-            "DiagnosisName": "",
-            "Result": "",
-            "Date": "String",
-            "UnitPrice": 33
-        }
-    ],
-    "Treatments": [
-        {
-            "Text": "String",
-            "Date": "String"
-        }
-    ],
-    "Charges": [
-        {
-            "Name": "String",
-            "UnitPrice": 3333
-        }
-    ]
+    "patient": {
+        "Age": "29",
+        "RegisterDate": "2/2/2022",
+        "PatientType": "service",
+        "OPTCase": "dental",
+        "Tempature": "201",
+        "Weight": "103",
+        "Height": "53",
+        "UpperBloodPressure": "100",
+        "LowerBloodPressure": "90",
+        "PulseRate": "",
+        "StaffPermit": "admin",
+        "loginuser": "ko",
+        "hospital": "ချမ်းမြသာ",
+        "Department": "dental",
+        "ReferInfor": "id",
+        "PatientStatus": "opd",
+        "Complaint": "good health",
+        "Surgical": "data",
+        "Examination": "test data",
+        "Investigation": "dd",
+        "DrugFee": 60000,
+        "DiagnosisFee": 4000,
+        "ChargeFee": 40,
+        "Tax": 500,
+        "GrandTotal": 500,
+        "StaffRoles": [
+            {
+                "RoleName": "nurse"
+            },
+            {
+                "RoleName": "red nurse"
+            }
+        ],
+        "Drugs": [
+            {
+                "Date": "",
+                "DrugName": "String",
+                "Quantity": "",
+                "Strength": "",
+                "Group": "",
+                "Forms": "",
+                "UnitPrice": 55,
+                "TotalPrice": 44
+            }
+        ],
+        "Diagnosis": [
+            {
+                "DiagnosisName": "",
+                "Result": "",
+                "Date": "String",
+                "UnitPrice": 33
+            }
+        ],
+        "Treatments": [
+            {
+                "Text": "String",
+                "Date": "String"
+            }
+        ],
+        "Charges": [
+            {
+                "Name": "String",
+                "UnitPrice": 3333
+            }
+        ]
+    }
 }
