@@ -60,7 +60,8 @@ const PatientSchema = new Schema({
   ChargeFee: Number,
   Tax: Number,
   GrandTotal: Number,
-  PersonId: {
+  OId:String,
+  PId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "PersonModel",
   },

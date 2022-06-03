@@ -30,24 +30,25 @@ exports.opd_patient_create = async (req, res, next) => {
     await newPerson.save();
     //console.log("Req data for person", newPerson);
     if (newPerson) {
+      console.log("test ",req.body.patient.Age)
       var newpatient = new patientsModel({
-        Age: req.body.Age,
-        RegisterDate: req.body.RegisterDate,
-        PatientType: req.body.PatientType,
+        Age: req.body.patient.Age,
+        RegisterDate: req.body.patient.RegisterDate,
+        PatientType: req.body.patient.PatientType,
         //Service: "company",
-        OPTCase: req.body.OPTCase,
-        Tempature: req.body.Tempature,
-        Weight: req.body.Weight,
-        Height: req.body.Height,
-        UpperBloodPressure: req.body.UpperBloodPressure,
-        LowerBloodPressure: req.body.LowerBloodPressure,
-        PulseRate: req.body.PulseRate,
+        OPTCase: req.body.patient.OPTCase,
+        Tempature: req.body.patient.Tempature,
+        Weight: req.body.patient.Weight,
+        Height: req.body.patient.Height,
+        UpperBloodPressure: req.body.patient.UpperBloodPressure,
+        LowerBloodPressure: req.body.patient.LowerBloodPressure,
+        PulseRate: req.body.patient.PulseRate,
         //StaffPermit: "staffkyaw",
         loginuser: "kyaw",
-        hospital: req.body.Hospital,
-        Department: req.body.Department,
+        hospital: req.body.patient.Hospital,
+        Department: req.body.patient.Department,
         //ReferInfor: "1234",
-        PatientStatus: req.body.patientStatus,
+        PatientStatus: req.body.patient.patientStatus,
         Complaint: "good health",
         Surgical: "dasd",
         Examination: "asd",
@@ -64,11 +65,11 @@ exports.opd_patient_create = async (req, res, next) => {
       //console.log("Req data for patient", newpatient);
       await newpatient.save();
       await updatepatientId(newPerson._id,newpatient._id);
-      await createStaffRoles(newpatient._id, req.body.StaffRoles);
-      await createDrugs(newpatient._id, req.body.Drugs);
-      await createDiagnosis(newpatient._id, req.body.Diagnosis);
-      await createTreatments(newpatient._id, req.body.Treatments);
-      await createCharges(newpatient._id, req.body.Charges);
+      await createStaffRoles(newpatient._id, req.body.patient.StaffRoles);
+      await createDrugs(newpatient._id, req.body.patient.Drugs);
+      await createDiagnosis(newpatient._id, req.body.patient.Diagnosis);
+      await createTreatments(newpatient._id, req.body.patient.Treatments);
+      await createCharges(newpatient._id, req.body.patient.Charges);
       res.json(newpatient);
     } else {
       res.json({
@@ -87,7 +88,7 @@ exports.opd_patient_create = async (req, res, next) => {
 exports.opd_patient_findALL = async (req, res, next) => {
   patientsModel
     .find()
-    .populate("PersonId")
+    .populate("PId")
     .populate("Drugs")
     .populate("Diagnosis")
     .populate("Treatments")
@@ -108,7 +109,7 @@ exports.opd_patient_findOne = async (req, res, next) => {
     .findOne({
       OPTCase: "dental",
     })
-    .populate("PersonId")
+    .populate("PId")
     .populate("Drugs")
     .populate("Diagnosis")
     .populate("Treatments")
@@ -148,6 +149,7 @@ const updatepatientId = async function (personId,patientId) {
    { new: true }
  )
 };
+
 const createStaffRoles = async function (patientId, staff) {
   return await StaffRoleModel.create(staff).then((docstaff) => {
     return patientsModel.findByIdAndUpdate(
